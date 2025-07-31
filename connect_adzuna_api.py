@@ -12,8 +12,9 @@ endpoint = f'https://api.adzuna.com/v1/api/jobs/{country}/search/1'
 params = {
     'app_id': APP_ID,
     'app_key': APP_KEY,
-    'what': 'data analyst',       # Job title or keywords
-    'where': 'London',            # Location
+    'what': 'Data Analyst',       # Job title or keywords
+    'location0': 'UK',
+    'location1': 'London',
     'results_per_page': 5,
     'content-type': 'application/json'
 }
