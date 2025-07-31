@@ -1,0 +1,9 @@
+**username**
+matantzur
+**passcode**
+matanavitalproject
+
+**application ID**
+223d9f60
+**application Key**
+3f4c7510782d76d9edffe71e90119545
