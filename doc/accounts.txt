@@ -2,8 +2,19 @@ gmail:
 matanavitalnayacollege@gmail.com
 matanavitalproject
 
-
-aws:
+---------------------------------
+aws: ROOT ACCOUNT
 email: matanavitalnayacollege@gmail.com
 account: matanAvital
 passcode: Avit@lMa7an
+---------------------------------
+
+IAM USERS
+project-avital
+https://275198336494.signin.aws.amazon.com/console
+Avit@lMa7an
+
+
+project-matanAvital
+https://275198336494.signin.aws.amazon.com/console
+Avit@lMa7an
