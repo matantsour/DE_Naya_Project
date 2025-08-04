@@ -13,8 +13,15 @@ IAM USERS
 project-avital
 https://275198336494.signin.aws.amazon.com/console
 Avit@lMa7an
-
+ACCESS KEY
+AKIAUAEYZLXXIYUQHZVS
+SECRET ACCESS KEY
+R2ogKehlt4s5k+j/kv1VH1/l/0E6kXxQQEENL/Ju
 
 project-matanAvital
 https://275198336494.signin.aws.amazon.com/console
 Avit@lMa7an
+ACCESS KEY
+AKIAUAEYZLXXAMOLQAMI
+SECRET ACCESS KEY
+agTuYbpl0/WHkpCr9gG2Ggq7/sncGfVHLxdQV8rc
