@@ -1,0 +1,9 @@
+gmail:
+matanavitalnayacollege@gmail.com
+matanavitalproject
+
+
+aws:
+email: matanavitalnayacollege@gmail.com
+account: matanAvital
+passcode: Avit@lMa7an
