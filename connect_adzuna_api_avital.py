@@ -1,8 +1,8 @@
 import requests
 
 # Replace with your Adzuna credentials
-APP_ID = '223d9f60'
-APP_KEY = '3f4c7510782d76d9edffe71e90119545	'
+APP_ID = '85001579'
+APP_KEY = '3f42741594f1135c2c9a6e2f601b509a'
 
 # Set up base URL and endpoint
 country = 'gb'  # Country code, e.g., 'gb' (UK), 'us', 'de', 'il'
