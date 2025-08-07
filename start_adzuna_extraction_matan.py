@@ -60,11 +60,11 @@ def extract_from_adzuna(job_title, state, city):
 
 # --- Search List Generator ---
 job_titles = [
-    "Data Analyst",
-    "Software Engineer",
-    "Marketing Manager",
-    "UX Designer",
-    "Financial Analyst",
+    "Product Manager",
+    "DevOps Engineer",
+    "Machine Learning Engineer",
+    "Sales Representative",
+    "Content Writer",
 ]
 
 states = {
