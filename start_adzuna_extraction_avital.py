@@ -13,7 +13,7 @@ APP_KEY = '3f42741594f1135c2c9a6e2f601b509a'
 def upload_results_to_aws_bucket(results, job_title, state, city):
     bucket_name = 'naya-project-job-ads'
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    key = f'data/raw/adzuna/{timestamp}.json'
+    key = f'data/raw/adzuna/a{timestamp}.json'
 
     json_string = json.dumps(results, indent=2)
     s3 = boto3.client('s3')
