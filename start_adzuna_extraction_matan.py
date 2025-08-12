@@ -8,7 +8,6 @@ from datetime import datetime
 APP_ID = '223d9f60'
 APP_KEY = '3f4c7510782d76d9edffe71e90119545'
 
-
 # --- Upload to S3 ---
 def upload_results_to_aws_bucket(results, job_title, state, city):
     bucket_name = 'naya-project-job-ads'
@@ -28,7 +27,6 @@ def upload_results_to_aws_bucket(results, job_title, state, city):
         print(f"✅ Uploaded {len(results.get('results', []))} jobs: {job_title} in {city}, {state}")
     except Exception as e:
         print(f"❌ S3 Upload failed for {job_title} in {city}, {state}: {e}")
-
 
 # --- API Call ---
 def extract_from_adzuna(job_title, state, city):
@@ -57,8 +55,7 @@ def extract_from_adzuna(job_title, state, city):
     except Exception as e:
         print(f"❌ Request failed for {job_title} in {city}, {state}: {e}")
 
-
-# --- Search List Generator ---
+# --- Search List ---
 job_titles = [
     "Product Manager",
     "DevOps Engineer",
@@ -75,12 +72,7 @@ states = {
     "Illinois": ["Chicago", "Aurora", "Naperville"],
 }
 
-
-def generate_search_list(job_titles=None, states_cities=None):
-    if states_cities is None:
-        states_cities = states
-    if job_titles is None:
-        job_titles = job_titles
+def generate_search_list(job_titles, states_cities):
     return [
         {"Job_Title": jt, "State": state, "City": city}
         for jt in job_titles
@@ -88,22 +80,19 @@ def generate_search_list(job_titles=None, states_cities=None):
         for city in cities
     ]
 
+# --- Main Loop ---
+search_list = generate_search_list(job_titles, states)
 
-# --- Main loop ---
-def start_searching_for_adzuna_jobs():
-    search_list = generate_search_list(job_titles=job_titles,states_cities=states)
+for i, search in enumerate(search_list, 1):
+    job_title = search["Job_Title"]
+    state = search["State"]
+    city = search["City"]
+    print(f"\n🔍 ({i}/{len(search_list)}) Searching: {job_title} in {city}, {state}")
 
-    for i, search in enumerate(search_list, 1):
-        job_title = search["Job_Title"]
-        state = search["State"]
-        city = search["City"]
-        print(f"\n🔍 ({i}/{len(search_list)}) Searching: {job_title} in {city}, {state}")
+    extract_from_adzuna(job_title, state, city)
 
-        extract_from_adzuna(job_title, state, city)
+    if i < len(search_list):  # Don't sleep after last call
+        print("⏳ Waiting 30 seconds to avoid rate limits...\n")
+        time.sleep(30)
 
-        if i < len(search_list):  # Don't sleep after the last one
-            print("⏳ Waiting 30 seconds to avoid rate limits...\n")
-            time.sleep(30)
-
-
-start_searching_for_adzuna_jobs()
+print("\n✅ Job completed.")
